@@ -1,0 +1,79 @@
+# 127.0.0.1:8000/api/v1/products?category=1
+
+{
+    "count": 18,
+    "next": "http://127.0.0.1:8000/api/v1/products?category=1&limit=10&offset=10",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "name": "Пульсар 1",
+            "article": "p-001",
+            "slug": "pulsar_1",
+            "category": 1
+        },
+        {
+            "id": 2,
+            "name": "Пульсар 2",
+            "article": "p-002",
+            "slug": "pulsar_2",
+            "category": 1
+        },
+        {
+            "id": 3,
+            "name": "Пульсар 3",
+            "article": "p-003",
+            "slug": "pulsar_3",
+            "category": 1
+        },
+        {
+            "id": 4,
+            "name": "name",
+            "article": "article",
+            "slug": "slug",
+            "category": 1
+        },
+        {
+            "id": 5,
+            "name": "name",
+            "article": "article",
+            "slug": "slug",
+            "category": 1
+        },
+        {
+            "id": 6,
+            "name": "name",
+            "article": "article",
+            "slug": "slug",
+            "category": 1
+        },
+        {
+            "id": 7,
+            "name": "name",
+            "article": "article",
+            "slug": "slug",
+            "category": 1
+        },
+        {
+            "id": 8,
+            "name": "name",
+            "article": "article",
+            "slug": "slug",
+            "category": 1
+        },
+        {
+            "id": 9,
+            "name": "name",
+            "article": "article",
+            "slug": "slug",
+            "category": 1
+        },
+        {
+            "id": 10,
+            "name": "name",
+            "article": "article",
+            "slug": "slug",
+            "category": 1
+        }
+    ]
+}

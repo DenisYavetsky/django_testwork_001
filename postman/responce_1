@@ -1,0 +1,31 @@
+# 127.0.0.1:8000/api/v1/category_props?category=1
+
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "props": [
+                {
+                    "id": 1,
+                    "name": "характеристика 3",
+                    "count": 15
+                },
+                {
+                    "id": 2,
+                    "name": "характеристика 2",
+                    "count": 14
+                },
+                {
+                    "id": 3,
+                    "name": "характеристика 1",
+                    "count": 15
+                }
+            ],
+            "name": "Счетчики тепла",
+            "slug": "schetchiki_tepla"
+        }
+    ]
+}
