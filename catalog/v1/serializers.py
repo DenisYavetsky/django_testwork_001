@@ -8,16 +8,17 @@ class PropsSerializer(ModelSerializer):
     props = serializers.SerializerMethodField()
 
     def get_props(self, obj):
+        products = Product.objects.filter(category=obj)
         props = obj.props.all()
+        property_values = PropertyValue.objects.filter(product__in=products, prop__in=props).select_related('prop')
         properties = []
-        for prop in props:
+        for property_value in property_values:
             properties.append({
-                'id': prop.id,
-                'name': prop.name,
-                'count': PropertyValue.objects.filter(prop=prop).count(),
+                'id': property_value.id,
+                'name': property_value.prop.name,
+                'value': property_value.str_val if property_value.str_val else property_value.digit_val
             })
         return properties
-
 
     class Meta:
         model = Category
