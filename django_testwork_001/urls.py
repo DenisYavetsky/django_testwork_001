@@ -16,3 +16,5 @@ urlpatterns = [
     path('api/v1/', include(router.urls))
 
 ]
+
+urlpatterns += [path('silk', include('silk.urls', namespace='silk'))]
