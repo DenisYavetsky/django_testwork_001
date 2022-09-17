@@ -21,7 +21,7 @@ class PropertyObject(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=256)
     slug = models.SlugField()
-    props = models.ManyToManyField(PropertyObject, blank=True)
+    props = models.ManyToManyField(PropertyObject, blank=True, related_name='category_props')
 
     class Meta:
         verbose_name = 'Категория'

@@ -89,13 +89,15 @@ class ProductReadSerializer(ModelSerializer):
     def get_props(self, obj):
         props = obj.category.props.all()
         properties = []
-        for prop in props:
-            props_values = PropertyValue.objects.get(prop=prop, product=obj)
+        property_values = PropertyValue.objects.filter(product=obj, prop__in=props).select_related('prop')
+
+        for property_value in property_values:
+
             properties.append({
-                'prop_name': prop.name,
-                'str_val': props_values.str_val,
-                'digit_val': props_values.digit_val,
-                'code_url': props_values.code_url,
+                'prop_name': property_value.prop.name,
+                'str_val': property_value.str_val,
+                'digit_val': property_value.digit_val,
+                'code_url': property_value.code_url,
             })
         return properties
 

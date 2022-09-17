@@ -15,12 +15,11 @@ class CategoryPropsViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
 
 
 class ProductsViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    queryset = Product.objects.all()
 
     def get_queryset(self):
         if self.request.query_params.get('category'):
-            return Product.objects.filter(category=self.request.query_params.get('category'))
-        return Product.objects.all()
+            return Product.objects.select_related('category').filter(category=self.request.query_params.get('category'))
+        return Product.objects.all().select_related('category')
 
     def get_serializer_class(self):
 
